@@ -1,0 +1,19 @@
+{
+  "name": "fasix-browser-de",
+  "version": "0.1.0",
+  "description": "When a browser is your only Desktop Environment.",
+  "main": "index.js",
+  "repository": "https://github.com/magiusche/fasix",
+  "author": "Magius(CHE)",
+  "homepage": "https://magius.it/fasix",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "yarn build && build/fasix",
+    "build": "cmake --build ./build --config Debug --target all --",
+    "build:conf": "/usr/bin/cmake --no-warn-unused-cli -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE -DCMAKE_BUILD_TYPE:STRING=Debug -DCMAKE_C_COMPILER:FILEPATH=/usr/bin/clang -DCMAKE_CXX_COMPILER:FILEPATH=/usr/bin/clang++ -S./ -B./build -G Ninja",
+    "release":"cmake --build ./release --config Release --target all --",
+    "release:conf": "cmake --no-warn-unused-cli -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE -DCMAKE_BUILD_TYPE:STRING=Release -DCMAKE_C_COMPILER:FILEPATH=/usr/bin/clang -DCMAKE_CXX_COMPILER:FILEPATH=/usr/bin/clang++ -S./ -B./release -G Ninja"
+  }
+  
+}
